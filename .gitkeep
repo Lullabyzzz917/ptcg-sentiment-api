@@ -1,0 +1,14 @@
+# 資料檔案 (這些通常較大且可能包含敏感資訊)
+data/*
+!data/.gitkeep
+*.csv
+dataset/
+*.dat
+
+# 生成的報告
+reports/*
+!reports/.gitkeep
+output/
+*.html
+*.json
+*.txt

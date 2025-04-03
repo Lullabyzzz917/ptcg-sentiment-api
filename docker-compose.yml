@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  ptcg-sentiment-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ptcg-sentiment-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./reports:/app/reports
+    environment:
+      - CSV_PATH=/app/data/PTCG_Pocket.csv
+      - REPORT_DIR=/app/reports
+      - USE_TRANSFORMERS=False
+    restart: unless-stopped
+    command: python main.py --host 0.0.0.0 --port 8000
