@@ -121,31 +121,6 @@ curl -X POST http://localhost:8000/api/comparison \
   }'
 ```
 
-### 主要端點
-
-1. **GET /api/data/status** - 取得資料狀態和基本統計資訊
-2. **GET /api/data/date-range** - 取得資料中的日期範圍
-3. **GET /api/period-analysis** - 分析單一時間段的評論資料
-4. **POST /api/comparison** - 比較兩個時間段的評論資料並生成報告
-
-### 使用範例
-
-#### 比較兩個時間段的評論
-
-```bash
-curl -X POST http://localhost:8000/api/comparison \
-  -H "Content-Type: application/json" \
-  -d '{
-    "period1_start": "2025-01-01",
-    "period1_end": "2025-01-15",
-    "period2_start": "2025-02-01",
-    "period2_end": "2025-02-15",
-    "period1_name": "一月上旬",
-    "period2_name": "二月上旬",
-    "output_format": "html"
-  }'
-```
-
 ## 測試
 
 執行單元測試：
